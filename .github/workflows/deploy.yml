@@ -19,13 +19,15 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
+      working-directory: ./YOUR_PROJECT_DIRECTORY
 
     - name: Build Angular project
       run: npm run build -- --prod
+      working-directory: ./YOUR_PROJECT_DIRECTORY
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/deplace-tech
+        publish_dir: ./YOUR_PROJECT_DIRECTORY/dist/YOUR_PROJECT_NAME
