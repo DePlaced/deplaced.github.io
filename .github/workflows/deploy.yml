@@ -23,7 +23,7 @@ jobs:
       working-directory: ./deplace-tech
 
     - name: Build Angular project
-      run: npm run build -- --prod
+      run: npm run build -- --configuration production
       working-directory: ./deplace-tech
 
     - name: Deploy to GitHub Pages
