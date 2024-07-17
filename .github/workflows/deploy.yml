@@ -33,9 +33,8 @@ jobs:
 
     - name: Deploy to gh pages
       run: |
-        echo "Starting deployment..."
-        npx angular-cli-ghpages --dir=dist/deplace-tech/browser --no-silent --debug
-      working-directory: ./deplace-tech
+        npx angular-cli-ghpages --dir=dist/deplace-tech/browser
+      working-directory: ./deplace-tech/dist
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
