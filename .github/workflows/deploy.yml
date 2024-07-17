@@ -19,6 +19,7 @@ jobs:
         node-version: 20
 
     - name: Install dependencies
+      working-directory: C:\Repository\deplaced.github.io\deplace-tech
       run: npm install
 
     - name: Build Angular project
@@ -26,7 +27,7 @@ jobs:
 
     - name: Deploy to gh pages
       run: |
-        npx angular-cli-ghpages --dir=dist/deplace.tech
+        npx angular-cli-ghpages --dir=dist/deplace.tech 
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
