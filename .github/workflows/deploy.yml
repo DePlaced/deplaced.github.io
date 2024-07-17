@@ -31,6 +31,11 @@ jobs:
       working-directory: ./deplace-tech
       run: npm install -g angular-cli-ghpages
 
+    - name: Configure Git
+      run: |
+        git config --global user.email "deplacebusiness@gmail.com"
+        git config --global user.name "deplaced"
+
     - name: Deploy to gh pages
       working-directory: ./deplace-tech
       run: |
