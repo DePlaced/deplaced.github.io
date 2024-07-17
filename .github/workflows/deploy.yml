@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-#Start deploying      
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,11 +19,11 @@ jobs:
         node-version: 20
 
     - name: Install dependencies
-      working-directory: C:\Repository\deplaced.github.io\deplace-tech
+      working-directory: ./deplace-tech
       run: npm install
       
     - name: Build Angular project
-      working-directory: C:\Repository\deplaced.github.io\deplace-tech
+      working-directory: ./deplace-tech
       run: npm run build
 
     - name: Deploy to gh pages
