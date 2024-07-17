@@ -16,18 +16,17 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: 20
 
     - name: Install dependencies
-      run: npm ci
-      working-directory: ./deplace-tech
+      run: npm install
 
     - name: Build Angular project
-      run: npm run build -- --configuration production
-      working-directory: ./deplace-tech
+      run: npm run build 
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./deplace-tech/dist/deplace-tech
+    - name: Deploy to gh pages
+      run: |
+        npx angular-cli-ghpages --dir=dist/your-angular-app
+      env:
+        CI: true
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
