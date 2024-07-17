@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-#RUN WHEN PUSHING TO MAIN
+#RUN WHEN PUSHING TO MAIN pls
 jobs:
   build:
     runs-on: ubuntu-latest
