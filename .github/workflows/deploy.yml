@@ -24,6 +24,10 @@ jobs:
       
     - name: Build Angular project
       working-directory: ./deplace-tech
+      run: npm run build
+
+    - name: Build dist folder 
+      working-directory: ./deplace-tech
       run: ng build
 
     - name: Verify build output directory
