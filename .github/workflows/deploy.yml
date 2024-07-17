@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-#work pls
+#Works now
 jobs:
   build:
     runs-on: ubuntu-latest
