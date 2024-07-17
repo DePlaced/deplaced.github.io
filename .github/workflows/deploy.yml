@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-#deploy
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,9 +26,24 @@ jobs:
       working-directory: ./deplace-tech
       run: npm run build
 
+    - name: Verify build output directory
+      run: |
+        if [ -d "./deplace-tech/dist/deplace-tech" ]; then
+          echo "Directory exists."
+          ls -al ./deplace-tech/dist/deplace-tech
+        else
+          echo "Directory does not exist."
+          exit 1
+        fi
+      working-directory: ./deplace-tech
+
+    - name: Install angular-cli-ghpages
+      run: npm install -g angular-cli-ghpages
+
     - name: Deploy to gh pages
       run: |
         npx angular-cli-ghpages --dir=dist/deplace-tech 
+      working-directory: ./deplace-tech
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
