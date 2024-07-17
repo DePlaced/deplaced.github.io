@@ -24,7 +24,7 @@ jobs:
       
     - name: Build Angular project
       working-directory: ./deplace-tech
-      run: npm run build
+      run: ng build
 
     - name: Verify build output directory
       run: |
