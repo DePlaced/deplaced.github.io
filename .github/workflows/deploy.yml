@@ -28,7 +28,7 @@ jobs:
       run: npm run build
 
     - name: Copy CNAME file
-      run: cp ./deplace-tech/CNAME ./deplace-tech/dist/deplace-tech/
+      run: cp ./CNAME ./deplace-tech/dist/deplace-tech/
 
     - name: Install angular-cli-ghpages
       working-directory: ./deplace-tech
