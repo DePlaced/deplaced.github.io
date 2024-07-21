@@ -1,5 +1,5 @@
 <div class="header-container">
-   @if(platform.ANDROID || platform.IOS){ 
+   @if(platform.ANDROID || platform.IOS){ //Change to check screen ratio
     <div class="toolbar-btn-container">
   
     </div>
@@ -9,7 +9,7 @@
         <a mat-button class="toolbar-btn" routerLink="">
         Home
         </a> 
-        <a mat-button class="toolbar-btn" routerLink="">
+        <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
         Projects
         </a> 
         <a mat-button class="toolbar-btn" routerLink="">
