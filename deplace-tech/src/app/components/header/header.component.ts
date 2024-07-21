@@ -4,6 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ScreenSizeService } from '../../services/screen-size.service';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ import { ScreenSizeService } from '../../services/screen-size.service';
     MatIconModule,
     RouterLink,
     RouterLinkActive,
+    AsyncPipe,
+    NgIf
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

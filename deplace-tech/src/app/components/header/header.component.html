@@ -1,39 +1,28 @@
-<div class="header-container">
-   @if(isMobile$){
-    <div>
-        <mat-icon class="burger-menu" (click)="toggleMobileMenu()">
-            menu
-        </mat-icon>
+<header [class.mobile]="isMobile$ | async" class="header-container">
+    <div *ngIf="isMobile$ | async" class="burger-menu-container">
+      <mat-icon class="burger-menu" (click)="toggleMobileMenu()">
+        menu
+      </mat-icon>
     </div>
-   }
-   @if(!(isMobile$)){
-    <div class="toolbar-btn-container">
-        <a mat-button class="toolbar-btn" routerLink="">
+    <div *ngIf="!(isMobile$ | async)" class="toolbar-btn-container">
+      <a mat-button class="toolbar-btn" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
         Home
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
+      </a>
+      <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
         Projects
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="">
+      </a>
+      <a mat-button class="toolbar-btn" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
         About
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="">
+      </a>
+      <a mat-button class="toolbar-btn" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
         Contact
-        </a>   
+      </a>
     </div>
-   }
-</div>
-<div class="mobile-menu" [class.active]="mobileMenuActive">
-    <a mat-button class="toolbar-btn" routerLink="">
-        Home
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
-        Projects
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="">
-        About
-        </a> 
-        <a mat-button class="toolbar-btn" routerLink="">
-        Contact
-        </a>   
+  </header>
+  <div class="mobile-menu" [class.active]="mobileMenuActive">
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+    <a routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">Projects</a>
+    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+    <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
   </div>
+  
