@@ -1,8 +1,10 @@
 <div class="header-container">
    @if(platform.ANDROID || platform.IOS){ 
-    
+    <div class="toolbar-btn-container">
+  
+    </div>
    }
-   @if(platform.BLINK || platform.EDGE || platform.FIREFOX ||platform.SAFARI || platform.WEBKIT || platform.TRIDENT){
+   @else{
     <div class="toolbar-btn-container">
         <a mat-button class="toolbar-btn" routerLink="">
         Home
