@@ -1,9 +1,13 @@
 <div class="header-container">
+   @if(platform.ANDROID || platform.IOS){ 
+    
+   }
+   @if(platform.BLINK || platform.EDGE || platform.FIREFOX ||platform.SAFARI || platform.WEBKIT || platform.TRIDENT){
     <div class="toolbar-btn-container">
         <a mat-button class="toolbar-btn" routerLink="">
         Home
         </a> 
-<a mat-button class="toolbar-btn" routerLink="">
+        <a mat-button class="toolbar-btn" routerLink="">
         Projects
         </a> 
         <a mat-button class="toolbar-btn" routerLink="">
@@ -13,4 +17,5 @@
         Contact
         </a>   
     </div>
+   }
 </div>

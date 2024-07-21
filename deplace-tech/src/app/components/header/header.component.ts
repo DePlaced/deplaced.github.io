@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import { getSupportedInputTypes, Platform, supportsPassiveEventListeners, supportsScrollBehavior,} from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-header',
@@ -12,4 +13,5 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class HeaderComponent {
 
+  constructor(public platform: Platform) {}
 }
