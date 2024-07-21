@@ -1,12 +1,12 @@
 <div class="header-container">
-   @if(isMobile$){
+   @if(isMobile$|async){
     <div>
         <mat-icon class="burger-menu" (click)="toggleMobileMenu()">
             menu
         </mat-icon>
     </div>
    }
-   @if(!(isMobile$)){
+   @if(!(isMobile$)|async){
     <div class="toolbar-btn-container">
         <a mat-button class="toolbar-btn" routerLink="">
         Home
