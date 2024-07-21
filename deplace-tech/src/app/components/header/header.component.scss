@@ -1,6 +1,6 @@
 // Define variables for header heights
 $header-height-desktop: 10%;
-$header-height-mobile: 10%;
+$header-height-mobile: 50px;
 
 // Mixin for responsive header height
 @mixin header-height($desktop-height, $mobile-height) {
@@ -10,22 +10,58 @@ $header-height-mobile: 10%;
   }
 }
 
-.header-container{
-    @include header-height($header-height-desktop, $header-height-mobile);
-    background: #D8E3FF;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px;
+.header-container {
+  @include header-height($header-height-desktop, $header-height-mobile);
+  background: #d8e3ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.toolbar-btn-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.toolbar-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.toolbar-btn{
-    font-size: 1.2rem;
+.toolbar-btn {
+  font-size: 1.2rem;
+  cursor: pointer;
 }
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+
+  span {
+    background: #000;
+    height: 3px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    display: flex; // Show the burger menu on smaller screens
+  }
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: $header-height-mobile;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+
+  &.active {
+    display: flex; // Show the menu when active
+  }
+}
+    

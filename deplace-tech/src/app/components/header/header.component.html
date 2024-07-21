@@ -1,10 +1,12 @@
 <div class="header-container">
-   @if(platform.ANDROID || platform.IOS){ //Change to check screen ratio
-    <div class="toolbar-btn-container">
-  
+   @if(isMobile$){
+    <div>
+        <mat-icon class="burger-menu" (click)="toggleMobileMenu()">
+            menu
+        </mat-icon>
     </div>
    }
-   @else{
+   @if(!(isMobile$)){
     <div class="toolbar-btn-container">
         <a mat-button class="toolbar-btn" routerLink="">
         Home
@@ -21,3 +23,17 @@
     </div>
    }
 </div>
+<div class="mobile-menu" [class.active]="mobileMenuActive">
+    <a mat-button class="toolbar-btn" routerLink="">
+        Home
+        </a> 
+        <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Projects
+        </a> 
+        <a mat-button class="toolbar-btn" routerLink="">
+        About
+        </a> 
+        <a mat-button class="toolbar-btn" routerLink="">
+        Contact
+        </a>   
+  </div>
