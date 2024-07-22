@@ -5,24 +5,18 @@
       </mat-icon>
     </div>
     <div *ngIf="!(isMobile$ | async)" class="toolbar-btn-container">
-      <a mat-button class="toolbar-btn" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a class="toolbar-btn" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
         Home
       </a>
-      <a mat-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
         Projects
       </a>
-      <a mat-button class="toolbar-btn" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a class="toolbar-btn" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
         About
       </a>
-      <a mat-button class="toolbar-btn" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a class="toolbar-btn" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
         Contact
       </a>
     </div>
   </header>
-  <div class="mobile-menu" [class.active]="mobileMenuActive">
-    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-    <a routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">Projects</a>
-    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
-    <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
-  </div>
   

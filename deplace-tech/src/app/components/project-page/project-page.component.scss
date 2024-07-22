@@ -1,4 +1,10 @@
+.gridbox{
+  border-radius: 30px;
+}
+
 .gridbox:hover{
-  background-color: grey;
+  border-radius: 30px;
+  background: #ff5052;
   cursor: pointer;
 }
+
