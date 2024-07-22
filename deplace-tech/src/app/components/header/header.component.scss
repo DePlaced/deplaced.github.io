@@ -1,6 +1,7 @@
 
 .header-container {
   min-height: 10%;
+  border-radius: 15px;
   background: #0543f9;
   display: flex;
   flex-direction: row;
@@ -23,6 +24,7 @@
   font-size: 1.6rem;
   cursor: pointer;
   color: white;
+  font-family: monospace;
   text-decoration: none;
   margin-left: 15px;
 }
@@ -30,4 +32,6 @@
 
 .burger-menu {
   cursor: pointer;
+  color: white;
+  margin: 10px
 }

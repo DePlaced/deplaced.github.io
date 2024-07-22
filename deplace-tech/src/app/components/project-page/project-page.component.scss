@@ -1,10 +1,50 @@
-.gridbox{
-  border-radius: 30px;
+.wrapper.four {
+  background-color: #9ba5b4;
+  font-size: 3rem;
+  font-family: "Play", sans-serif;
+}
+.four .type{
+  padding: 2rem 1rem;
+  width: auto;
+  margin: auto;
+}
+.four h3 {
+  width: 13ch;
+  border-right: 4px solid black;
+  margin: 2rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(13, end), blink-caret 0.5s step-end infinite alternate;
+}
+@-webkit-keyframes typing {
+  from {
+      width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  50% {
+      border-color: transparent;
+  }
 }
 
-.gridbox:hover{
-  border-radius: 30px;
-  background: #ff5052;
-  cursor: pointer;
+.grid-container {
+  margin: 20px;
 }
 
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
