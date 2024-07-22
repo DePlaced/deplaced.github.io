@@ -1,10 +1,5 @@
-<header [class.mobile]="isMobile$ | async" class="header-container">
-    <div *ngIf="isMobile$ | async" class="burger-menu-container">
-      <mat-icon class="burger-menu" (click)="toggleMobileMenu()">
-        menu
-      </mat-icon>
-    </div>
-    <div *ngIf="!(isMobile$ | async)" class="toolbar-btn-container">
+<header class="header-container">
+    <div class="toolbar-btn-container">
       <a class="toolbar-btn" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
         Home
       </a>
