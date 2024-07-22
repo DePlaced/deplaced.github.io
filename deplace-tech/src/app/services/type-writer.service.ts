@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { concat, concatMap, delay, from, interval, map, merge, of, scan, take, withLatestFrom } from 'rxjs';
+import { concat, concatMap, delay, from, interval, map, merge, of, scan, take } from 'rxjs';
 
 interface TypeParams {
   word: string;
@@ -32,7 +32,7 @@ export class TypeWriterService {
     );
 
     const flicker$ = interval(speed * 2).pipe(
-      map(x => x % 2 === 0 ? '' : '_')
+      map(x => x % 2 === 0 ? '' : '|')
     );
 
     return merge(
