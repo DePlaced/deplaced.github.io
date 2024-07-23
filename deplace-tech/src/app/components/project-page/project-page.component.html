@@ -1,9 +1,9 @@
 <div class="page-container">
   <h3 class="header">{{ typedText$ | async }}</h3>
   <mat-grid-list cols="2" rowHeight="350px">
-    @for (project of projects | async; track project) {
+    @for (project of projects$ | async; track project) {
       <mat-grid-tile [colspan]="project.cols" [rowspan]="project.rows">
-    
+          {{project.title}}
       </mat-grid-tile>
     }
   </mat-grid-list>
