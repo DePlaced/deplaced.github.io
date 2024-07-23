@@ -1,5 +1,10 @@
 <body class="web-container">
-  <app-header></app-header>
+  @if(isMobile$ |async){
+  
+  }
+  @else{
+    <app-header></app-header>
+  }
     <router-outlet></router-outlet>
   </body>
   
