@@ -25,7 +25,7 @@ import { TypeWriterService } from '../../services/type-writer.service';
 })
 export class HomePageComponent {
   private typewriterService = inject(TypeWriterService);
-  titles: string[] = [" Welcome to my home page..."];
+  titles: string[] = [" Welcome to my home page... Work in progress"];
   typedText$ = this.typewriterService
   .getTypewriterEffect(this.titles)
   .pipe(map((text) => text));
