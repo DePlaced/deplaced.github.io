@@ -1,20 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgStyle } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { TypeWriterService } from '../../services/type-writer.service';
-
-interface Project {
-  title: string;
-  cols: number;
-  rows: number;
-}
+import { ScreenSizeService } from '../../services/screen-size.service';
+import { ProjectService } from '../../services/project.service';
+import { Observable } from 'rxjs';
+import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-project-page',
@@ -27,41 +23,27 @@ interface Project {
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    NgStyle,
   ]
 })
 export class ProjectPageComponent {
   private breakpointObserver = inject(BreakpointObserver);
-  private typewriterService = inject(TypeWriterService);
+  private screenSizeService = inject(ScreenSizeService);
+  private projectService = inject(ProjectService);
 
-  /** Mock projects data */
-  private mockProjects: Project[] = [
-    { title: 'Project 1', cols: 2, rows: 1 },
-    { title: 'Project 2', cols: 1, rows: 1 },
-    { title: 'Project 3', cols: 1, rows: 2 },
-    { title: 'Project 4', cols: 1, rows: 1 }
-  ];
-
-  /** Fetch projects from mock data */
-  fetchProjects(): Observable<Project[]> {
-    return of(this.mockProjects);
-  }
-
-  /** Adjust projects layout based on screen size */
+  isMobile$: Observable<boolean> = this.screenSizeService.isMobile$;
   projects$: Observable<Project[]> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => matches),
-    switchMap((isHandset) => this.fetchProjects().pipe(
+    switchMap((isHandset) => this.projectService.fetchProjects().pipe(
       map((projects) => {
-        if (isHandset) {
-          return projects.map(project => ({ ...project, cols: 1, rows: 1 }));
-        }
-        return projects;
+        return projects.map(project => ({
+          ...project,
+          cols: isHandset ? 1 : 3,
+          rows: 1,
+          backgroundImage: `url('/assets/images/project${project.id}.jpg')` // Example path
+        }));
       })
     ))
   );
-
-  titles: string[] = ["Welcome to my project page..."];
-  typedText$ = this.typewriterService
-    .getTypewriterEffect(this.titles)
-    .pipe(map((text) => text));
 }

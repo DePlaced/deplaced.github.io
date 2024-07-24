@@ -1,3 +1,8 @@
-.web-container{
+html{
     padding: 20px;
+    scroll-behavior: smooth; 
+}
+
+.router-outlet{
+    z-index: -1;
 }

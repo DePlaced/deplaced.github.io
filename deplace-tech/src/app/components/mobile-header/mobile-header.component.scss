@@ -1,0 +1,26 @@
+
+.header-container {
+    min-height: 10%;
+    border-radius: 15px;
+    background: #0543f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    position: sticky;
+    bottom: 20px;
+  }
+  
+  .toolbar-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toolbar-btn {
+    cursor: pointer;
+    color: white;
+  }
+
+  

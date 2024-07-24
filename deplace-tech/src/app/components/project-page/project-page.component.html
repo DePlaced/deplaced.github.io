@@ -1,9 +1,8 @@
 <div class="page-container">
-  <h3 class="header">{{ typedText$ | async }}</h3>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <mat-grid-list [cols]="(isMobile$ | async) ? 1 : 3" rowHeight="350px">
     @for (project of projects$ | async; track project) {
-      <mat-grid-tile [colspan]="project.cols" [rowspan]="project.rows">
-          {{project.title}}
+      <mat-grid-tile class="project-grid" [colspan]="project.cols" [rowspan]="project.rows" [ngStyle]="{'background-image': project.backgroundImage}">
+        {{ project.name }}
       </mat-grid-tile>
     }
   </mat-grid-list>
