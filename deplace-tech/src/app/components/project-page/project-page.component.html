@@ -2,7 +2,10 @@
   <mat-grid-list class="project-list" [cols]="(isMobile$ | async) ? 1 : 3">
     @for (project of projects$ | async; track project) {
       <mat-grid-tile class="projects">
-        {{ project.name }}
+        <div class="background"></div>
+        <div class="overlay">
+          <div class="title">{{ project.name }}</div>
+        </div>
       </mat-grid-tile>
     }
   </mat-grid-list>
