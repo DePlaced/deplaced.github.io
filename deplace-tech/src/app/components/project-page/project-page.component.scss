@@ -1,23 +1,17 @@
 .page-container {
   overflow: hidden;
   display: flex;
-  flex-direction: column;
 }
 
-.header {
-  font-family: monospace; 
-  font-size: 1.8rem;
-}
-
-.mat-grid-list {
-  margin: 1px;
+.project-list {
+  width: 99%;
+  align-self: center;
 }
 
 .project-grid {
   border: 1px solid black; 
   font-family: monospace;
   display: flex;
-  align-items: center;
   justify-content: center;
   z-index: -1;
   overflow: hidden;

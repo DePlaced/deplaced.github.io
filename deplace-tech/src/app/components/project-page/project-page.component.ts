@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map, switchMap } from 'rxjs/operators';
+import { Component, inject, OnInit } from '@angular/core';
 import { AsyncPipe, NgStyle } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -9,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ScreenSizeService } from '../../services/screen-size.service';
 import { ProjectService } from '../../services/project.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Project } from '../../models/project';
 
 @Component({
@@ -28,22 +26,13 @@ import { Project } from '../../models/project';
   ]
 })
 export class ProjectPageComponent {
-  private breakpointObserver = inject(BreakpointObserver);
   private screenSizeService = inject(ScreenSizeService);
   private projectService = inject(ProjectService);
 
   isMobile$: Observable<boolean> = this.screenSizeService.isMobile$;
-  projects$: Observable<Project[]> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => matches),
-    switchMap((isHandset) => this.projectService.fetchProjects().pipe(
-      map((projects) => {
-        return projects.map(project => ({
-          ...project,
-          cols: isHandset ? 1 : 3,
-          rows: 1,
-          backgroundImage: `url('/assets/images/project${project.id}.jpg')` // Example path
-        }));
-      })
-    ))
-  );
+  projects$: Observable<Project[]>;
+
+  constructor(){
+    this.projects$ = this.projectService.fetchProjects();
+  }
 }
