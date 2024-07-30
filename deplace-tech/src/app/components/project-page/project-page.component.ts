@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { AsyncPipe, NgStyle } from '@angular/common';
+import { AsyncPipe, NgOptimizedImage, NgStyle } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,16 +23,19 @@ import { Project } from '../../models/project';
     MatButtonModule,
     MatCardModule,
     NgStyle,
+    NgOptimizedImage,
   ]
 })
 export class ProjectPageComponent {
   private screenSizeService = inject(ScreenSizeService);
   private projectService = inject(ProjectService);
+  imagePath: string;
 
   isMobile$: Observable<boolean> = this.screenSizeService.isMobile$;
   projects$: Observable<Project[]>;
 
   constructor(){
     this.projects$ = this.projectService.fetchProjects();
+    this.imagePath = 'assets/project-images/image.png';
   }
 }

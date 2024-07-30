@@ -19,7 +19,6 @@
           "options": {
             "outputPath": "dist/deplace-tech",
             "index": "src/index.html",
-            "baseHref": "/deplaced.github.io/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
