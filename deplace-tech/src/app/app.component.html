@@ -1,10 +1,10 @@
 <html>
   @if(isMobile$ |async){
-    <router-outlet></router-outlet>
+    <router-outlet class="content"></router-outlet>
     <mobile-header class="mobile-header"></mobile-header>
   }
   @else{
     <desktop-header class="desktop-header"></desktop-header>
-    <router-outlet></router-outlet>
+    <router-outlet class="content"></router-outlet>
   }
 </html>

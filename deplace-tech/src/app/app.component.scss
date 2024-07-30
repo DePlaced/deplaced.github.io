@@ -8,9 +8,11 @@ html{
 .desktop-header{
     position: sticky;
     top: 3%;
+    z-index: 1;
 }
 
 .mobile-header{
     position: sticky;
     bottom: 3%;
+    z-index: 1;
 }
