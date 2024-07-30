@@ -6,12 +6,16 @@ html{
 
 .desktop-header{
     position: sticky;
-    margin: 3%;
+    top: 3%;
+    left: 3%;
+    right: 3%;
     z-index: 1;
 }
 
 .mobile-header{
     position: sticky;
-    margin: 3%;
+    bottom: 3%;
+    left: 3%;
+    right: 3%;
     z-index: 1;
 }
