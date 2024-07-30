@@ -1,17 +1,17 @@
 html{
-    padding: 3%;
     scroll-behavior: smooth; 
     margin: auto;
+    height: fit-content;
 }
 
 .desktop-header{
     position: sticky;
-    top: 3%;
+    margin: 3%;
     z-index: 1;
 }
 
 .mobile-header{
     position: sticky;
-    bottom: 3%;
+    margin: 3%;
     z-index: 1;
 }
