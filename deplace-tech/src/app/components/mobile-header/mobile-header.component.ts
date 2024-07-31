@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'mobile-header',
@@ -9,6 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
     RouterLink,
     RouterLinkActive,
   ],
