@@ -1,15 +1,19 @@
 <header class="header-container">
     <div class="toolbar-btn-container">
-      <a mat-icon-button  class="toolbar-btn" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a mat-icon-button  class="toolbar-btn" matTooltip="Home"
+        [matTooltipPosition]="above" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
         <mat-icon class="icon">home</mat-icon>
       </a>
-      <a mat-icon-button class="toolbar-btn" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a mat-icon-button class="toolbar-btn" matTooltip="Projects"
+        [matTooltipPosition]="above" routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page">
         <mat-icon class="icon">summarize</mat-icon>
       </a>
-      <a mat-icon-button class="toolbar-btn" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a mat-icon-button class="toolbar-btn" matTooltip="About"
+        [matTooltipPosition]="above" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
         <mat-icon class="icon">face</mat-icon>
       </a>
-      <a mat-icon-button class="toolbar-btn" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a mat-icon-button class="toolbar-btn" matTooltip="Contact"
+        [matTooltipPosition]="above" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
         <mat-icon class="icon">call</mat-icon>
       </a>
     </div>
