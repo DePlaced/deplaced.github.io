@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AsyncPipe, NgOptimizedImage, NgStyle } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ScreenSizeService } from '../../services/screen-size.service';
 import { ProjectService } from '../../services/project.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Project } from '../../models/project';
 
 @Component({

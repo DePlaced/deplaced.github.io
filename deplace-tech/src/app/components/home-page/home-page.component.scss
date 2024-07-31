@@ -1,8 +1,22 @@
 .page-container{
-  overflow: hidden;
-  margin: 20px;
+  margin: 50px;
 }
 
-.header{
+.module{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header, .text{
   font-family: monospace;
+}
+
+
+
+.lottie-container{
+  align-items: center;
+  align-self: center;
+  width: 650px;
+  height: 500px;
 }

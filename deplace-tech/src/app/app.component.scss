@@ -1,16 +1,19 @@
 html{
-    scroll-behavior: smooth; 
-    margin: auto;
+    scroll-behavior: smooth;
     height: auto;
     width: auto;
+    margin: 0px;
+    padding: 0px;
 }
 
 .desktop-header{
     position: sticky;
-    z-index: 1;
+    top: 3%;
+    z-index: 10;
 }
 
 .mobile-header{
     position: sticky;
-    z-index: 1;
+    bottom: 3%;
+    z-index: 10;
 }

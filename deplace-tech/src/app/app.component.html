@@ -1,4 +1,5 @@
 <html>
+  <div class="web-container">
   @if(isMobile$ |async){
     <router-outlet class="content"></router-outlet>
     <mobile-header class="mobile-header"></mobile-header>
@@ -7,4 +8,5 @@
     <desktop-header class="desktop-header"></desktop-header>
     <router-outlet class="content"></router-outlet>
   }
+  </div>
 </html>
