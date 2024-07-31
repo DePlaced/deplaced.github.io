@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { concat, concatMap, delay, from, interval, map, merge, of, scan, take } from 'rxjs';
+import { combineLatest, concat, concatMap, delay, from, interval, map, merge, of, scan, startWith, take, takeWhile } from 'rxjs';
 
 interface TypeParams {
   word: string;
@@ -28,19 +28,22 @@ export class TypeWriterService {
   private type({ word, speed, backwards = false }: TypeParams) {
     const typing$ = interval(speed).pipe(
       map(x => backwards ? word.substring(0, word.length - x) : word.substring(0, x + 1)),
-      take(word.length)
+      take(word.length),
+      startWith(''),
     );
 
     const flicker$ = interval(speed * 2).pipe(
-      map(x => x % 2 === 0 ? '' : '|')
+      map(x => x % 2 === 0 ? '' : '|'),
+      startWith('')
     );
 
-    return merge(
-      typing$.pipe(map(typed => ({ typed }))),
-      flicker$.pipe(map(flicker => ({ flicker })))
-    ).pipe(
-      scan((acc, curr) => ({ ...acc, ...curr }), { typed: '', flicker: '' }),
-      map(({ typed, flicker }) => typed + flicker)
+    return combineLatest([typing$, flicker$]).pipe(
+      takeWhile(([typed, _]) => typed.length <= word.length),
+      scan(([prevTyped, prevFlicker], [typed, flicker]) => {
+        const isTypingComplete = typed.length === word.length;
+        return [typed, isTypingComplete ? '' : flicker];
+      }, ['', '']),
+      map(([typed, flicker]) => typed + flicker)
     );
   }
 }
