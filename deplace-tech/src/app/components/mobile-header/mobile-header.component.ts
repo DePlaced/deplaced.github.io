@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'mobile-header',
