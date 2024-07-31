@@ -11,7 +11,6 @@ import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
-    TooltipPosition,
     RouterLink,
     RouterLinkActive,
   ],
