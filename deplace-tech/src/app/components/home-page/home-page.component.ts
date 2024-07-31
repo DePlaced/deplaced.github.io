@@ -29,7 +29,7 @@ import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 export class HomePageComponent {
   private typewriterService = inject(TypeWriterService);
  
-  titles: string[] = [" Welcome to my home page... Work in progress"];
+  titles: string[] = [" Welcome to my home page..."];
  
   typedText$ = this.typewriterService
   .getTypewriterEffect(this.titles)
